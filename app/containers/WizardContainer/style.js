@@ -10,11 +10,10 @@ export const Section = styled.section`
 
 export const CenteredSection = styled(Section)`
   text-align: center;
-  background: #FFFFFF;
+  background: #ffffff;
   margin: 20px;
   padding: 20px;
   box-shadow: 0 20px 16px -15px rgba(0, 0, 0, 0.57);
-
 `;
 
 export const WizardWrapper = styled.div`
@@ -24,6 +23,7 @@ export const WizardWrapper = styled.div`
 export const BodySteps = styled.div`
   padding-top: 50px;
   padding-bottom: 20px;
+  text-align: left !important;
   //height: 60vh;
 `;
 
