@@ -16,36 +16,32 @@ const FormReviewStepWrapper = styled.div`
   }
 `;
 
-const LabelItem = styled.div``;
-
 /* eslint-disable react/prefer-stateless-function */
 class FormReviewStep extends React.Component {
   render() {
+    const { data } = this.props;
     return (
       <FormReviewStepWrapper>
         <Row className="w-100">
-          <Col xs="3" />
+          <Col xs="3"/>
           <Col xs="6" className="">
-            <div className="pb-5">
-              <span className="label-header">Select your Services</span>
-            </div>
-            <div className="border-row pb-3">
-              <div className="head-label-item pt-3">Current Address</div>
-              <div className="label-item">Address Line 1</div>
-              <div className="label-item">Address Line 1</div>
-            </div>
-            <div className="border-row pb-3">
-              <div className="head-label-item pt-3">Current Address</div>
-              <div className="label-item">Address Line 1</div>
-              <div className="label-item">Address Line 1</div>
-            </div>
-            <div className="border-row pb-3">
-              <div className="head-label-item pt-3">Current Address</div>
-              <div className="label-item">Address Line 1</div>
-              <div className="label-item">Address Line 1</div>
-            </div>
+            <Row className="pb-5">
+              <span className="label-header">Review your Details and Submit</span>
+            </Row>
+
+            <Row className="head-label-item pt-3">Current Address</Row>
+            <Row className="label-item">{data.location.addressLine}</Row>
+            <Row className="label-item">{data.location.postcode}</Row>
+            <Row className="label-item">{data.location.city}</Row>
+            <Row className="label-item">{data.location.country}</Row>
+            <Row className="border-row pb-3"/>
+
+            <Row className="head-label-item pt-3">Delivery Service Type</Row>
+            <Row className="label-item">{data.service.deliveryType}</Row>
+            <Row className="label-item">{data.service.packagingType}</Row>
+            <Row className="border-row pb-3"/>
           </Col>
-          <Col xs="3" />
+          <Col xs="3"/>
         </Row>
       </FormReviewStepWrapper>
     );

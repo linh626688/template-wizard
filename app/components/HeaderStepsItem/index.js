@@ -39,8 +39,8 @@ const WizardCard = styled.div`
   //background: #7AC29A;
   //box-shadow: 0 20px 16px -15px rgba(0, 0, 0, 0.57);
   .middle-vertical {
-    margin-top: auto;
-    margin-bottom: auto;
+    position: absolute;
+    top: 50%;
   }
   .checked-color {
     color: #007bff;
@@ -59,11 +59,12 @@ const WizardCard = styled.div`
 class HeaderStepsItem extends React.Component {
   handleClickItem = e => {
     e.preventDefault();
-    console.log('idx', this.props.idx);
+    this.props.onClickStep(this.props.stepIdx)
   };
 
   render() {
-    const { name, icon, idx, checked } = this.props;
+    const { name, icon, stepIdx, currentStep } = this.props;
+    let checked = currentStep >= stepIdx;
     return (
       <div>
         <WizardCard onClick={this.handleClickItem} className="hover-pointer">
@@ -74,17 +75,17 @@ class HeaderStepsItem extends React.Component {
                   checked ? 'checked-color-border' : ''
                 }`}
               >
-                <i className={icon} />
+                <i className={icon}/>
               </IconHeader>
               <div>
                 <span className="font-S-20 word-break-all">
-                  {idx}.{name}
+                  {stepIdx + 1}.{name}
                 </span>
               </div>
             </Col>
-            <Col xs="2" className="middle-vertical">
-              <div className="arrow-right">
-                <i className="ti-angle-right" />
+            <Col xs="2" >
+              <div className="arrow-right middle-vertical">
+                <i className="ti-angle-right"/>
               </div>
             </Col>
           </Row>

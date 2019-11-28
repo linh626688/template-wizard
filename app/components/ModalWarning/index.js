@@ -7,21 +7,46 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Row from 'reactstrap/es/Row';
+import { Button, Modal, ModalBody } from 'reactstrap';
+import { TYPE_WARNING } from '../../const/Constant';
 
 const ModalWarningWrapper = styled.div`
-  .warning-color {
-    border: 3px solid #dc3545;
-    color: #dc3545 !important;
+  .warning-msg {
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #74788d
   }
 `;
+
 const IconWarning = styled.div`
   font-size: 20px;
-  border: 3px solid #dc3545;
+  border: 3px solid #f27474;
   text-align: center;
   border-radius: 50%;
-  color: rgba(0, 0, 0, 0.2);
+  color: #f27474;
+  font-weight: 600;
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  position: relative;
+  top: -2px;
+
+  [class*='ti-'] {
+    position: absolute;
+    z-index: 1;
+    left: 1px;
+    right: 0px;
+    top: 23px;
+  }
+`;
+
+const IconSuccess = styled.div`
+  font-size: 20px;
+  border: 3px solid #a5dc86;
+  text-align: center;
+  border-radius: 50%;
+  color: #a5dc86;
   font-weight: 600;
   width: 70px;
   height: 70px;
@@ -40,14 +65,25 @@ const IconWarning = styled.div`
 `;
 
 function ModalWarning(props) {
+  let icon = <IconWarning className="icon-circle p-3"><i className="ti-alert"/></IconWarning>;
+  switch (props.type) {
+    case TYPE_WARNING.ERROR:
+      icon = <IconWarning className="icon-circle p-3"><i className="ti-alert"/></IconWarning>;
+      break;
+    case TYPE_WARNING.SUCCESS:
+      icon = <IconSuccess className="icon-circle p-3"><i className="ti-check"/></IconSuccess>;
+      break;
+    default:
+      break;
+  }
   return (
     <ModalWarningWrapper>
       <Modal isOpen={props.isOpen} toggle={props.toggle} centered>
-        <ModalBody className="text-center pt-3" style={{ color: 'red' }}>
-          <IconWarning className="warning-color">
-            <i className="ti-check-box" />
-          </IconWarning>
-          {props.body}
+        <ModalBody className="text-center pt-5">
+          {icon}
+          <div className="pt-3 text-center">
+            <span className="warning-msg">{props.body}</span>
+          </div>
         </ModalBody>
         <div className="text-center p-3">
           <Button color="secondary" onClick={props.toggle}>

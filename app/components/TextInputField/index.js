@@ -8,9 +8,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
-  Form,
   FormGroup,
-  Label,
   Input,
   FormFeedback,
   FormText,
@@ -33,12 +31,11 @@ const TextInputFieldWrapper = styled.div`
 class TextInputField extends React.Component {
   handleChange = e => {
     const { name, value } = e.target;
-    console.log('name', name);
-    console.log('value', value);
+    this.props.onChange(name, value);
   };
 
   render() {
-    const { isError, name, type, label, subLabel, placeHolder } = this.props;
+    const { isError, name, type, label, subLabel, placeHolder, value } = this.props;
     return (
       <TextInputFieldWrapper>
         <FormGroup>
@@ -51,6 +48,7 @@ class TextInputField extends React.Component {
             placeholder={placeHolder}
             onChange={this.handleChange}
             name={name}
+            value={value}
             type={type}
           />
           <FormFeedback>This field is required</FormFeedback>

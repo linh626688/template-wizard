@@ -15,18 +15,39 @@ const HeaderStepsWrapper = styled.div`
 
 /* eslint-disable react/prefer-stateless-function */
 class HeaderSteps extends React.Component {
+
+  handleClickStep = idx => {
+    this.props.handleChangeStep(idx);
+  };
+
   render() {
+    const { currentStep } = this.props;
     return (
       <HeaderStepsWrapper>
         <Row>
           <Col xs={4}>
-            <HeaderStepsItem name="Location" icon="ti-map-alt" idx={1} checked={true}/>
+            <HeaderStepsItem
+              name="Location"
+              icon="ti-map-alt"
+              stepIdx={0}
+              onClickStep={this.handleClickStep}
+              currentStep={currentStep}/>
           </Col>
           <Col xs={4}>
-            <HeaderStepsItem name="Select Service" icon="ti-package" idx={2} checked={true}/>
+            <HeaderStepsItem
+              name="Select Service"
+              icon="ti-package"
+              stepIdx={1}
+              onClickStep={this.handleClickStep}
+              currentStep={currentStep}/>
           </Col>
           <Col xs={4}>
-            <HeaderStepsItem name="Review" icon="ti-check-box" idx={3} checked={false}/>
+            <HeaderStepsItem
+              name="Review"
+              icon="ti-check-box"
+              stepIdx={2}
+              onClickStep={this.handleClickStep}
+              currentStep={currentStep}/>
           </Col>
         </Row>
         {/*<HeaderStepsItem name="type" icon="2" idx={2}/>*/}

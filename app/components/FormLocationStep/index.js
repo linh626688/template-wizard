@@ -5,10 +5,10 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Col, Row } from 'reactstrap';
 import TextInputField from '../TextInputField';
+import { isEmpty } from 'lodash';
 
 export const FormLocationStepWrapper = styled.div`
   .border-row {
@@ -18,16 +18,20 @@ export const FormLocationStepWrapper = styled.div`
 
 /* eslint-disable react/prefer-stateless-function */
 class FormLocationStep extends React.Component {
-  handleOnChange = (name, value) => {};
+  handleOnChange = (name, value) => {
+    this.props.handleChange(name, value);
+  };
 
   render() {
+    const { locationData } = this.props;
     return (
       <FormLocationStepWrapper>
         <Row className="w-100">
-          <Col xs="3" />
+          <Col xs="3"/>
           <Col xs="6" className="border-row">
             <Row className="pb-5">
-              <span className="label-header">Setup Your Current Location</span>
+              <span className="label-header">
+                Setup Your Current Location</span>
             </Row>
             <Row>
               <TextInputField
@@ -35,8 +39,10 @@ class FormLocationStep extends React.Component {
                 placeHolder="Address Line"
                 name="addressLine"
                 type="text"
+                value={locationData.addressLine}
                 subLabel="Please enter your address"
-                isError={false}
+                isError={isEmpty(locationData.addressLine)}
+                onChange={this.handleOnChange}
               />
             </Row>
             <Row>
@@ -46,7 +52,9 @@ class FormLocationStep extends React.Component {
                 name="postcode"
                 type="text"
                 subLabel="Please enter your postcode"
-                isError={false}
+                isError={isEmpty(locationData.postcode)}
+                value={locationData.postcode}
+                onChange={this.handleOnChange}
               />
             </Row>
             <Row>
@@ -56,7 +64,9 @@ class FormLocationStep extends React.Component {
                 name="city"
                 type="text"
                 subLabel="Please enter your city"
-                isError
+                isError={isEmpty(locationData.city)}
+                value={locationData.city}
+                onChange={this.handleOnChange}
               />
             </Row>
             <Row>
@@ -66,11 +76,13 @@ class FormLocationStep extends React.Component {
                 name="country"
                 type="text"
                 subLabel="Please enter your Country"
-                isError
+                isError={isEmpty(locationData.country)}
+                value={locationData.country}
+                onChange={this.handleOnChange}
               />
             </Row>
           </Col>
-          <Col xs="3" />
+          <Col xs="3"/>
         </Row>
       </FormLocationStepWrapper>
     );
