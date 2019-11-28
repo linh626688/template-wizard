@@ -77,7 +77,7 @@ class HeaderStepsItem extends React.Component {
               >
                 <i className={icon}/>
               </IconHeader>
-              <div>
+              <div className="pt-2">
                 <span className="font-S-20 word-break-all">
                   {stepIdx + 1}.{name}
                 </span>

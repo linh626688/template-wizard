@@ -126,7 +126,11 @@ export class WizardContainer extends React.Component {
       case 0:
         return (
           <Row>
-            <Col style={{ textAlign: 'right' }}>
+            <Col style={{
+              textAlign: 'right',
+              paddingRight: 0,
+              paddingLeft: 0,
+            }}>
               <CustomButton
                 size="md"
                 onClick={this.handleClickNext}
@@ -139,7 +143,11 @@ export class WizardContainer extends React.Component {
       case 1:
         return (
           <Row>
-            <Col style={{ textAlign: 'left' }}>
+            <Col style={{
+              textAlign: 'left',
+              paddingRight: 0,
+              paddingLeft: 0,
+            }}>
               <CustomButton
                 onClick={this.handleClickPrevious}
                 size="md"
@@ -147,7 +155,11 @@ export class WizardContainer extends React.Component {
                 name="Previous"
               />
             </Col>
-            <Col style={{ textAlign: 'right' }}>
+            <Col style={{
+              textAlign: 'right',
+              paddingRight: 0,
+              paddingLeft: 0,
+            }}>
               <CustomButton
                 size="md"
                 onClick={this.handleClickNext}
@@ -160,7 +172,11 @@ export class WizardContainer extends React.Component {
       case 2:
         return (
           <Row>
-            <Col style={{ textAlign: 'left' }}>
+            <Col style={{
+              textAlign: 'left',
+              paddingRight: 0,
+              paddingLeft: 0,
+            }}>
               <CustomButton
                 onClick={this.handleClickPrevious}
                 size="md"
@@ -168,7 +184,11 @@ export class WizardContainer extends React.Component {
                 name="Previous"
               />
             </Col>
-            <Col style={{ textAlign: 'right' }}>
+            <Col style={{
+              textAlign: 'right',
+              paddingRight: 0,
+              paddingLeft: 0,
+            }}>
               <CustomButton
                 size="md"
                 onClick={this.handleSubmit}
