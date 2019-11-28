@@ -40,7 +40,7 @@ const WizardCard = styled.div`
   //box-shadow: 0 20px 16px -15px rgba(0, 0, 0, 0.57);
   .middle-vertical {
     position: absolute;
-    top: 50%;
+    padding-top: 100%;
   }
   .checked-color {
     color: #007bff;
