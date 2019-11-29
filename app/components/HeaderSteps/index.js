@@ -5,9 +5,9 @@
  */
 
 import React from 'react';
-import HeaderStepsItem from '../HeaderStepsItem';
 import { Col, Row } from 'reactstrap';
 import styled from 'styled-components';
+import HeaderStepsItem from '../HeaderStepsItem';
 
 const HeaderStepsWrapper = styled.div`
   border-bottom: 1px solid #eeeef4;
@@ -15,7 +15,6 @@ const HeaderStepsWrapper = styled.div`
 
 /* eslint-disable react/prefer-stateless-function */
 class HeaderSteps extends React.Component {
-
   handleClickStep = idx => {
     this.props.handleChangeStep(idx);
   };
@@ -31,7 +30,8 @@ class HeaderSteps extends React.Component {
               icon="ti-map-alt"
               stepIdx={0}
               onClickStep={this.handleClickStep}
-              currentStep={currentStep}/>
+              currentStep={currentStep}
+            />
           </Col>
           <Col xs={4}>
             <HeaderStepsItem
@@ -39,7 +39,8 @@ class HeaderSteps extends React.Component {
               icon="ti-package"
               stepIdx={1}
               onClickStep={this.handleClickStep}
-              currentStep={currentStep}/>
+              currentStep={currentStep}
+            />
           </Col>
           <Col xs={4}>
             <HeaderStepsItem
@@ -47,11 +48,10 @@ class HeaderSteps extends React.Component {
               icon="ti-check-box"
               stepIdx={2}
               onClickStep={this.handleClickStep}
-              currentStep={currentStep}/>
+              currentStep={currentStep}
+            />
           </Col>
         </Row>
-        {/*<HeaderStepsItem name="type" icon="2" idx={2}/>*/}
-        {/*<HeaderStepsItem name="facilities" icon="3" idx={3}/>*/}
       </HeaderStepsWrapper>
     );
   }

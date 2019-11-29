@@ -1,11 +1,14 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import { mount } from 'enzyme';
+import React from 'react';
+import HeaderSteps from '../index';
+import { WizardCard } from '../../HeaderStepsItem';
 
-// import HeaderSteps from '../index';
+const renderComponent = (props = {}) =>
+  mount(<HeaderSteps currentStep={1} {...props} />);
 
 describe('<HeaderSteps />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render the icon', () => {
+    const renderedComponent = renderComponent();
+    expect(renderedComponent.find(WizardCard)).toHaveLength(3);
   });
 });

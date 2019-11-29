@@ -31,7 +31,7 @@ const IconHeader = styled.div`
   }
 `;
 
-const WizardCard = styled.div`
+export const WizardCard = styled.div`
   max-width: 150px;
   min-height: 150px;
   max-height: 150px;
@@ -57,12 +57,12 @@ const WizardCard = styled.div`
 class HeaderStepsItem extends React.Component {
   handleClickItem = e => {
     e.preventDefault();
-    this.props.onClickStep(this.props.stepIdx)
+    this.props.onClickStep(this.props.stepIdx);
   };
 
   render() {
     const { name, icon, stepIdx, currentStep } = this.props;
-    let checked = currentStep >= stepIdx;
+    const checked = currentStep >= stepIdx;
     return (
       <div>
         <WizardCard onClick={this.handleClickItem} className="hover-pointer">
@@ -73,7 +73,7 @@ class HeaderStepsItem extends React.Component {
                   checked ? 'checked-color-border' : ''
                 }`}
               >
-                <i className={icon}/>
+                <i className={icon} />
               </IconHeader>
               <div className="pt-2 text-center">
                 <span className="font-S-20 word-break-all">
@@ -81,9 +81,9 @@ class HeaderStepsItem extends React.Component {
                 </span>
               </div>
             </Col>
-            <Col xs="2" >
+            <Col xs="2">
               <div className="arrow-right middle-vertical">
-                <i className="ti-angle-right"/>
+                <i className="ti-angle-right" />
               </div>
             </Col>
           </Row>
