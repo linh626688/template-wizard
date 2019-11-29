@@ -10,8 +10,8 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
-import injectSaga from 'utils/injectSaga';
-import injectReducer from 'utils/injectReducer';
+import injectSaga from '../../utils/injectSaga';
+import injectReducer from '../../utils/injectReducer';
 import { Col, Row, Spinner } from 'reactstrap';
 import makeSelectWizardContainer from './selectors';
 import reducer from './reducer';

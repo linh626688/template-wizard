@@ -1,17 +1,28 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Button } from '@storybook/react/demo';
+import CustomButton from '../app/components/CustomButton';
+import { withKnobs, object } from '@storybook/addon-knobs/react';
+import { storiesOf } from '@storybook/react';
 
 export default {
   title: 'Button',
 };
 
-export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+storiesOf('Button', module)
+  .addDecorator(withKnobs)
+  .add('PrimaryButton',
+    () => <CustomButton
+      size="md"
+      onClick={action('clicked')}
+      type="primary"
+      name="Submit"
+    />);
 
-export const emoji = () => (
-  <Button onClick={action('clicked')}>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
-  </Button>
-);
+// export const PrimaryButton  = () => ;
+//
+// export const SecondaryButton  = () => <CustomButton
+//   onClick={action('clicked')}
+//   size="md"
+//   type="secondary"
+//   name="Previous"
+// />;
