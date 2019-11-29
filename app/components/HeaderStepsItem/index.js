@@ -31,7 +31,7 @@ const IconHeader = styled.div`
   }
 `;
 
-const WizardCard = styled.div`
+export const WizardCard = styled.div`
   max-width: 150px;
   min-height: 150px;
   max-height: 150px;

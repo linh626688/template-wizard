@@ -50,8 +50,6 @@ class HeaderSteps extends React.Component {
               currentStep={currentStep}/>
           </Col>
         </Row>
-        {/*<HeaderStepsItem name="type" icon="2" idx={2}/>*/}
-        {/*<HeaderStepsItem name="facilities" icon="3" idx={3}/>*/}
       </HeaderStepsWrapper>
     );
   }

@@ -1,11 +1,25 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import { WizardContainer } from '../index';
 
-// import { WizardContainer } from '../index';
+import { shallow } from 'enzyme';
+import React from 'react';
+import HeaderSteps from '../../../components/HeaderSteps';
+import { BodySteps } from '../style';
 
 describe('<WizardContainer />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render its heading', () => {
+    const renderedComponent = shallow(<WizardContainer />);
+    expect(
+      renderedComponent.contains(
+        <title>WizardContainer</title>
+      ),
+    ).toBe(true);
+  });
+  it('should render steps', () => {
+    const renderedComponent = shallow(<WizardContainer />);
+    expect(renderedComponent.find(HeaderSteps)).toHaveLength(1);
+  });
+  it('should render the body form', () => {
+    const renderedComponent = shallow(<WizardContainer />);
+    expect(renderedComponent.find(BodySteps)).toHaveLength(1);
   });
 });

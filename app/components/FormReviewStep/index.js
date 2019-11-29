@@ -36,7 +36,7 @@ class FormReviewStep extends React.Component {
       <FormReviewStepWrapper>
         <Row className="w-100">
           <Col xs="3"/>
-          <Col xs="6" className="">
+          <Col xs="6">
             <Row className="pb-5">
               <span className="label-header">Review your Details and Submit</span>
             </Row>
