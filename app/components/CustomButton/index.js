@@ -12,7 +12,7 @@ import { Button } from 'reactstrap';
 function CustomButton(props) {
   return (
     <Button size={props.size} onClick={props.onClick} color={props.type}>
-      {props.name}
+      <span>{props.name}</span>
     </Button>
   );
 }
