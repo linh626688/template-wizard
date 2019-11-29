@@ -36,8 +36,6 @@ const WizardCard = styled.div`
   min-height: 150px;
   max-height: 150px;
   cursor: pointer;
-  //background: #7AC29A;
-  //box-shadow: 0 20px 16px -15px rgba(0, 0, 0, 0.57);
   .middle-vertical {
     position: absolute;
     padding-top: 100%;
@@ -77,7 +75,7 @@ class HeaderStepsItem extends React.Component {
               >
                 <i className={icon}/>
               </IconHeader>
-              <div className="pt-2">
+              <div className="pt-2 text-center">
                 <span className="font-S-20 word-break-all">
                   {stepIdx + 1}.{name}
                 </span>

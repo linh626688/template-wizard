@@ -14,6 +14,18 @@ const FormReviewStepWrapper = styled.div`
   .border-row {
     border-bottom: 1px dotted #eeeef4;
   }
+   .head-label-item {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: .7rem;
+      color: #646c9a;
+    }
+  .label-item {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8rem;
+      color: #646c9a;
+    }
 `;
 
 /* eslint-disable react/prefer-stateless-function */
